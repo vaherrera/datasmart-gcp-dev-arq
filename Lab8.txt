@@ -1,0 +1,23 @@
+## Crear bucket
+gsutil mb gs://mybucket_vahs
+
+## Descargar imagenes
+wget --output-document ada.jpg https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Ada_Lovelace_portrait.jpg/626px-Ada_Lovelace_portrait.jpg?20130907213703
+
+## Cargar imagen en el bucket
+gsutil cp ada.jpg gs://mybucket_vahs
+
+## Cambiar el acceso del bucket
+gsutil acl ch -u AllUsers:R gs://mybucket_vahs/ada.jpg
+
+## Listar contenido de bucket
+gsutil ls gs://mybucket_vahs
+
+## Detaller del objeto
+gsutil ls -l gs://mybucket_vahs/ada.jpg
+
+## Remover objetos del bucket
+gsutil rm gs://mybucket_vahs/ada.jpg
+
+## Eliminar bucket
+gsutil rm -r gs://mybucket_vahs
