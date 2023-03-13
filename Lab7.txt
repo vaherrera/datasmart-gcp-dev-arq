@@ -1,0 +1,27 @@
+## crear Maquina Virtual
+gcloud compute instances create vminstance1 --machine-type n1-standard-2 --zone us-central1-c
+
+## Conectar por SSH
+gcloud compute ssh vminstance1 --zone us-central1-c
+
+## Listar imagenes
+gcloud compute images list
+
+## Crear una VM Instance desde una Imagen
+gcloud compute instances create vminstance2 --image-family debian-10 --image-project debian-cloud
+
+## Detalle de instancia creada
+gcloud compute instances describe vminstance2
+
+## Iniciar a VM Instance
+gcloud compute instances start vminstance1
+
+## Detener a VM Instance
+gcloud compute instances stop vminstance1
+
+## Listar VM Instances en el Proyecto
+gcloud compute instances list
+
+## Terminar VM Instances en el Proyecto
+gcloud compute instances delete vminstance1
+gcloud compute instances delete vminstance2
